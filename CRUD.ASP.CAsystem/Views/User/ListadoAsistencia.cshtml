@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Asistente>
+
+@{
+    ViewData["Title"] = "Listado de Asistencias";
+    int idTabla = ViewBag.IdTabla;
+    string nombreTabla = ViewBag.NombreTabla;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Styles_ListadoAsistencia.css" asp-append-version="true" />
+    <link rel="icon" href="~/favicon.ico" asp-append-version="true" />
+    <title>UI</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="nav-navegation">
+                <div class="text-header">
+                    <h2>CAsystem</h2>
+                    <small>System Assistens</small>
+                </div>
+
+                <h2>Listado de Asistencia</h2>
+
+                <div class="nav-container">
+                    <nav>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">LogUp</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <table class="table">
+        <div class="star-create-container">
+            <a asp-action="AñadirAsistencia" asp-route-idTabla="@idTabla" asp-route-nombreTabla="@nombreTabla" class="btn btn-success">Añadir Asistencia</a>
+            <a class="btn btn-success" asp-area="" asp-controller="User" asp-action="InterfaceIndexUser">Your tables</a>
+        </div>
+        <thead>
+            <tr>
+                <th>IdAsistente</th>
+                <th>Nombre</th>
+                <th>Departamento</th>
+                <th>Asistencia</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var asistente in Model)
+            {
+                <tr>
+                    <td>@asistente.IdAsistente</td>
+                    <td>@asistente.Nombre_Asistencia</td>
+                    <td>@asistente.Departamento</td>
+                    <td>@asistente.Asistencia</td>
+                    <td>
+                        <a asp-action="EliminarAsistencia" class="btn btn-danger" asp-route-id="@asistente.IdAsistente" onclick="return confirm('¿Estás seguro de eliminar del listado al seleccionado?');">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

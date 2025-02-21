@@ -1,0 +1,45 @@
+﻿@model Tabla
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/StylesCrearTabla.css" asp-append-version="true" />
+    <link rel="icon" href="~/favicon.ico" asp-append-version="true" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h1>Now, Add a new Table</h1>
+            <p>
+				Remember select a descript name for the table.
+				Your Should use a name that is easy to remember.
+				Important : ¡Your table name should be unique.!
+            </p>
+            <p>CAsystem</p>
+        </div>
+
+        <div class="right-section">
+            <h1>New Table</h1>
+            <p>New name for table.</p>
+
+            <form asp-action="CrearTabla" method="post">
+                <div class="form-group">
+                    <label asp-for="NameTabla">Nombre de la Tabla</label>
+                    <input asp-for="NameTabla" class="form-control" required />
+                    <span asp-validation-for="NameTabla" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn-primary">Save</button>
+
+                <div class="text-center">
+                    <a asp-action="InterfaceIndexUser">Return</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

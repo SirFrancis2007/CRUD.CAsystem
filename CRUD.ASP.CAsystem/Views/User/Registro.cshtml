@@ -1,0 +1,39 @@
+﻿@model User
+
+@{
+    ViewData["Title"] = "Registro";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Registro.css" asp-append-version="true" />
+    <link rel="icon" href="~/favicon.ico" asp-append-version="true" />
+    <title>Registro</title>
+</head>
+<body>
+    <form class="form-login" asp-action="Registro" method="post">
+        <h1>Register</h1>
+        <div class="form-group">
+            <label asp-for="Usuario" class="control-label"></label>
+            <input asp-for="Usuario" class="form-control" />
+            <span asp-validation-for="Usuario" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="correo" class="control-label"></label>
+            <input asp-for="correo" class="form-control" />
+            <span asp-validation-for="correo" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="contraseña" class="control-label"></label>
+            <input asp-for="contraseña" class="form-control" />
+            <span asp-validation-for="contraseña" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+    </form>
+</body>
+</html>

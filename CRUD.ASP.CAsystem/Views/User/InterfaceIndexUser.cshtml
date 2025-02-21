@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Tabla>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Styles_InterfaceIndexUserr.css" asp-append-version="true" />
+    <link rel="icon" href="~/favicon.ico" asp-append-version="true" />
+    <title>UI</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="nav-navegation">
+                <div class="text-header">
+                    <h2>CAsystem</h2>
+                    <small>System Assistens</small>
+                </div>
+
+                <h2>Tabla de Asistencia</h2>
+
+                <div class="nav-container">
+                    <nav>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">LogUp</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <table class="table">
+        <div class="star-create-container">
+            <a asp-action="CrearTabla" class="btn btn-success">+ Agregar Nueva Tabla</a>
+        </div>
+        <thead>
+            <tr>
+                <th>idTabla</th>
+                <th>Nombre_Tabla</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Tabla in Model)
+            {
+                <tr>
+                    <td>@Tabla.idTabla</td>
+                    <td>@Tabla.NameTabla</td>
+                    <td>
+                        <a asp-action="ListadoAsistencia" asp-route-idTabla="@Tabla.idTabla" asp-route-nombreTabla="@Tabla.NameTabla" class="btn btn-info">Detalle</a>
+                        <a asp-action="EliminarTabla" class="btn btn-danger" asp-route-id="@Tabla.idTabla" onclick="return confirm('¿Estás seguro de eliminar esta tabla?');">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

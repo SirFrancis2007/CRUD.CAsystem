@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/aboutus.css" asp-append-version="true" />
+    <link rel="icon" href="~/favicon.ico" asp-append-version="true" />
+    <title>About Us</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="nav-navegation">
+                <div class="text-header">
+                    <h2>CAsystem</h2>
+                    <small>System Assistens</small>
+                </div>
+
+                <div class="nav-container">
+                    <nav>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">About Us</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">Ingresar</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Registro">Registrarse</a>
+                    </nav>
+                </div>
+
+                <div class="link">
+                    <a onclick="downloadCV()">Resume</a>
+                    <a href="https://github.com/SirFrancis2007">Repository</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="main-text">
+        <div class="container">
+            <h1>
+                About Us | Our firts Project 🎇
+            </h1>
+            <p>
+                CAsystem is a free assistance platform <br /> developed by the students of the Tecnica N°12 Libertador General José de San Martín: <br />                🤓 Carlos Bello, GitHub carlosb-dev <br />
+                🧙 Francisco García, Github SirFrancis2007 <br />
+                🏓 Jorge Casco, GitHub jorge-link <br />
+                🐒 Walter Benitez, GitHub Walter-Cooking <br />
+                🤠 Guido Gavilan, GitHub guido-rar <br />
+                All source code is available in the GitHub repository: GitHub repository
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <h3>Built with passion and dedication. | Francisco García | Carlos Bello | Jorge Casco | Guido Gavilan |</h3>
+            <h6>Copyrigth 2023 | CAsystemINC@gmail.com</h6>
+        </div>
+    </footer>
+</body>
+</html>
